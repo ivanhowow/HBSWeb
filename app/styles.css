@@ -1,0 +1,31 @@
+/* Angular cloaking CSS. DO NOT REMOVE*/
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+
+.clickable {
+  cursor: pointer;
+  /*padding: 10px;*/
+}
+
+.clickable {
+  color: black;
+}
+
+
+.clickable:hover {
+  background-color: #C9DCF2;
+}
+
+.pad2 {
+  padding: 2px;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
+.pad10 {
+  padding: 10px;
+}

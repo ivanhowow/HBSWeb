@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html id="ng-app" lang="en" ng-app="HBSensorUIApp" xmlns:ng="http://angularjs.org">
+  <head>
+    <title>HBSensorUI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="app/styles.css" rel="stylesheet" media="screen">
+  </head>
+  <body ng-controller='HBSensorUIAppCtrl' ng-cloak class="ng-cloak",>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="/">HBSensor</a>
+        <ul class="nav pull-right" ng-show="!profileOverviews">
+          <li class="dropdown">
+            <a class="dropdown-toggle clickable">
+              Loading
+            </a>
+          </li>
+        </ul>
+        <ul class="nav pull-right" ng-show="profileOverviews">
+          <!-- <li><a href="#" ng-click="reloadData()">Reload</a></li> -->
+          <li class="dropdown">
+            <a class="dropdown-toggle clickable" data-toggle="dropdown">
+              Profiles
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="clickable pad2" ng-repeat="(index, profile) in profileOverviews | orderBy:'UpdatedOnVal':true" style="font-size: 85%">
+                <a ng-href="#/view/{{profile.Identifier}}">
+                  <table>
+                    <tr>
+                      <td style="width:45px" valign="top">
+                        <img src="http://placehold.it/45x45"/>
+                      </td>
+                      <td valign="top">
+                        <b>{{profile.Name}}</b>
+                        <p>
+                          {{profile.Level}} {{profile.Class}}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top: 40px" ng-view/>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="angularjs/angular.min.js"></script>
+    <script src="underscorejs/underscore.js"></script>
+    <script src="app/HBSensorUIApp.js"></script>
+  </body>
+</html>

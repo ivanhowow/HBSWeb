@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row" ng-repeat="(index, profile) in profileOverviews | orderBy:'UpdatedOnVal':true">
+    <a ng-href="#/view/{{profile.Identifier}}">
+      <div class="span12 clickable pad10">
+        <h3>{{profile.Name}} (Level {{profile.Level}} {{profile.Race}} {{profile.Class}})</h3>
+        <h5>{{profile.Realm}} - {{profile.Faction}}</h5>
+      </div>
+    </a>
+  </div>
+
+</div>

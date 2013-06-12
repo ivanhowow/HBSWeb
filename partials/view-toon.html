@@ -1,0 +1,66 @@
+<div class="container" ng-show="profile">
+  <div class="row">
+    <div class="span12">
+      <h3>{{profile.Name}} (Level {{profile.Level}} {{profile.Race}} {{profile.Class}})</h3>
+      <h5>{{profile.Realm}} - {{profile.Faction}}</h5>
+      <table class="table">
+        <tr>
+          <td><b>Bag Free Slots</b></td>
+          <td>{{profile.BagFreeSlots}}</td>
+        </tr>
+        <tr>
+          <td><b>Flags</b></td>
+          <td>
+            <span class="label label-success" ng-show="profile.IsAlive">Alive</span>
+            <span class="label" ng-show="!profile.IsAlive">Alive</span>
+            &nbsp;
+            <span class="label label-success" ng-show="profile.IsAutoAttacking">Auto Attacking</span>
+            <span class="label" ng-show="!profile.IsAutoAttacking">Auto Attacking</span>
+            &nbsp;
+            <span class="label label-success" ng-show="profile.IsCasting">Casting</span>
+            <span class="label" ng-show="!profile.IsCasting">Casting</span>
+            &nbsp;
+            <span class="label label-success" ng-show="profile.IsGhost">Ghost</span>
+            <span class="label" ng-show="!profile.IsGhost">Ghost</span>
+            &nbsp;
+            <span class="label label-success" ng-show="profile.IsMoving">Moving</span>
+            <span class="label" ng-show="!profile.IsMoving">Moving</span>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Location</b></td>
+          <td>{{profile.Zone}} - {{profile.SubZone}}</td>
+        </tr>
+        <tr>
+          <td><b>Heading</b></td>
+          <td>{{profile.Heading}}</td>
+        </tr>
+        <tr>
+          <td><b>Gold</b></td>
+          <td>{{profile.Gold}}</td>
+        </tr>
+        <tr>
+          <td><b>Next Level Up</b></td>
+          <td>{{profile.NextLevelUpOn}} ({{profile.NextLevelUpIn}})</td>
+        </tr>
+        <tr>
+          <td><b>Current XP</b></td>
+          <td>{{profile.CurrentEXP}}</td>
+        </tr>
+        <tr>
+          <td><b>XP To Level</b></td>
+          <td>{{profile.NextEXP}}</td>
+        </tr>
+        <tr>
+          <td><b>XP/Hr</b></td>
+          <td>{{profile.XPPerHour}}</td>
+        </tr>
+        <tr>
+          <td><b>Last Updated</b></td>
+          <td>{{profile.UpdatedOn}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
