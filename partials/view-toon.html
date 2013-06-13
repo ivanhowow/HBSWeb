@@ -1,8 +1,57 @@
-<div class="row" ng-show="profile">
-  {{profile.Identifier}}
-  <br/>
-  <div class="one whole">
-    <div style="height: 150px; width:100%" chart chartdata="profile.EXPData"/>
+<div ng-show="profile">
+
+  <div class="row padded">
+    <div class="one half">
+      <div class="pull-left">
+        <img ng-src="{{profile.TN}}"/>
+      </div>
+      <div class="pull-left pad-left pad-right">
+        <p>
+          <big>{{profile.Name}}</big>&nbsp;<sup>{{profile.Faction}} {{profile.Realm}}</sup>
+        </p>
+        <p>
+          Level {{profile.Level}} {{profile.Race}} {{profile.Class}}
+        </p>
+        <p>
+          Last seen {{profile.UpdatedOn}}
+        </p>
+      </div>
+    </div>
+    <div class="one half">
+      <div class="pull-right pad-left pad-right">
+        <table class="responsive">
+          <tbody>
+            <tr>
+              <th><b>Free Bag Slots</b></th>
+              <td>{{profile.BagFreeSlots}}</td>
+            </tr>
+            <tr>
+              <th><b>Location</b></th>
+              <td>{{profile.Zone}} - {{profile.SubZone}}</td>
+            </tr>
+            <tr>
+              <th><b>Gold</b></th>
+              <td>{{profile.Gold}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pad-left pad-right">
+    <h3>EXP Gain</h3>
+  </div>
+  <div class="row pad-left pad-right">
+    <div class="one third">
+      <div style="height: 150px; width:80%" chart chartdata="profile.EXPData.LastHour"/>
+    </div>
+    <div class="one third">
+      <div style="height: 150px; width:80%" chart chartdata="profile.EXPData.LastDay"/>
+    </div>
+    <div class="one third">
+      <div style="height: 150px; width:80%" chart chartdata="profile.EXPData.LastWeek"/>
+    </div>
   </div>
 </div>
 <!--

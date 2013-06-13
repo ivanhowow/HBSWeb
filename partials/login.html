@@ -1,0 +1,16 @@
+<div class="spacer">&nbsp;</div>
+<div class="one centered half">
+  <form>
+    <p><input placeholder="MongoLab API Key" ng-disabled="lockinput" ng-model="connectionParams.apikey"/></p>
+    <p><input placeholder="Database Name" ng-disabled="lockinput" ng-model="connectionParams.dbname"/></p>
+    <button type="button" ng-click="connect()">Connect</button>
+    <br/><br/>
+    <p>Do not have an API Key? Sign up for a free MongoLab account <a href="http://www.mongolab.com">here</a></p>
+    <div class="error message" ng-show="error">
+      {{error}}
+    </div>
+    <div class="info message" ng-show="info">
+      {{info}}
+    </div>
+  </form>
+</div>

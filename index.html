@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html id="ng-app" lang="en" ng-app="HBSensorUIApp" xmlns:ng="http://angularjs.org">
   <head>
-    <title>HBSensorWeb</title>
+    <title>HBSensor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="vendor/groundwork/groundwork.css">
@@ -14,18 +14,17 @@
     <div class="row stick top" style="background-color: black;color: white">
       <div class="one whole padded">
         <a href="#/">
-          <h3 class="pull-left" style="color: white">HBSensorWeb</h3>
+          <h3 class="pull-left" style="color: white">HBSensor</h3>
         </a>
         <span class="pull-right">&nbsp;&nbsp;</span>
-        <span class="pull-right" ng-show="!profileOverviews"><h5>Please wait...</h5></span>
-        <button class="asphalt dropdown button pull-right" ng-show="profileOverviews">
-          <i class="icon-chevron-down"></i>&nbsp;Profiles
-          <ul>
-            <li ng-repeat="profile in profileOverviews">
-              <a ng-href="#/view/{{profile.Identifier}}">{{profile.Name}}</a>
-            </li>
-          </ul>
-        </button>
+        <span class="pull-right" ng-show="show_loading_indicator"><h5>Please wait...</h5></span>
+        <a href="#/logout" class="asphalt pull-right button" ng-show="profileOverviews">
+          <i class="icon-signout"></i>
+        </a>
+        <span class="pull-right">&nbsp;&nbsp;</span>
+        <a href="#/" class="asphalt pull-right button" ng-show="profileOverviews">
+          <i class="icon-home"></i>
+        </a>
       </div>
     </div>
     <div style="padding-top:80px" ng-view/>
@@ -34,6 +33,7 @@
     <script type="text/javascript" src="vendor/groundwork/groundwork.all.js"></script>
     <script src="vendor/angularjs/angular.min.js"></script>
     <script src="vendor/underscorejs/underscore.js"></script>
+    <script src="vendor/amplifyjs/amplify.min.js"></script>
     <!-- <script src="vendor/chartjs/Chart.min.js"></script> -->
     <script src="vendor/canvasjs/canvasjs.min.js"></script>
     <script src="app/HBSensorUIApp.js"></script>

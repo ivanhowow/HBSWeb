@@ -1,15 +1,40 @@
-<div class="spacer">&nbsp;</div>
 <a ng-repeat="profile in profileOverviews | orderBy:'UpdatedOnVal':true" ng-href="#/view/{{profile.Identifier}}">
-  <button class="row padded bordered">
-    <div class="one whole">
-      <h3>{{profile.Name}}</h3>
-      Level {{profile.Level}} {{profile.Race}} {{profile.Class}}
-      <br/>
-      <small>
-        {{profile.Faction}} {{profile.Realm}}
-      </small>
-      <br/>
-      Last seen {{profile.UpdatedOn}}
+  <div class="row padded gap-bottom highlight" style="color: black">
+
+    <div class="pull-left">
+      <img ng-src="{{profile.TN}}"/>
     </div>
-  </button>
+    <div class="pull-left pad-left pad-right">
+      <p>
+        <big>{{profile.Name}}</big>&nbsp;<sup>{{profile.Faction}} {{profile.Realm}}</sup>
+      </p>
+      <p>
+        Level {{profile.Level}} {{profile.Race}} {{profile.Class}}
+      </p>
+      <p>
+        Last seen {{profile.UpdatedOn}}
+      </p>
+    </div>
+
+
+    <!--
+    <div class="one whole">
+      <table class="table">
+        <tr>
+          <td valign="top"><img ng-src="{{profile.TN}}"/></td>
+          <td valign="top">
+            <h3>{{profile.Name}}</h3>
+            Level {{profile.Level}} {{profile.Race}} {{profile.Class}}
+            <br/>
+            <small>
+              {{profile.Faction}} {{profile.Realm}}
+            </small>
+            <br/>
+            Last seen {{profile.UpdatedOn}}
+          </td>
+        </tr>
+      </table>
+    </div>
+  -->
+  </div>
 </a>
