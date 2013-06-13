@@ -1,59 +1,41 @@
 <!DOCTYPE html>
 <html id="ng-app" lang="en" ng-app="HBSensorUIApp" xmlns:ng="http://angularjs.org">
   <head>
-    <title>HBSensorUI</title>
+    <title>HBSensorWeb</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link type="text/css" rel="stylesheet" href="vendor/groundwork/groundwork.css">
+    <!--[if IE]><link type="text/css" rel="stylesheet" href="vendor/groundwork/groundwork-ie.css"><![endif]-->
+    <!--[if lt IE 9]><script type="text/javascript" src="vendor/groundwork/html5shiv.min.js"></script><![endif]-->
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" href="vendor/groundwork/font-awesome-ie7.min.css"><![endif]-->
     <link href="app/styles.css" rel="stylesheet" media="screen">
   </head>
-  <body ng-controller='HBSensorUIAppCtrl' ng-cloak class="ng-cloak",>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <a class="brand" href="/">HBSensor</a>
-        <ul class="nav pull-right" ng-show="!profileOverviews">
-          <li class="dropdown">
-            <a class="dropdown-toggle clickable">
-              Loading
-            </a>
-          </li>
-        </ul>
-        <ul class="nav pull-right" ng-show="profileOverviews">
-          <!-- <li><a href="#" ng-click="reloadData()">Reload</a></li> -->
-          <li class="dropdown">
-            <a class="dropdown-toggle clickable" data-toggle="dropdown">
-              Profiles
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="clickable pad2" ng-repeat="(index, profile) in profileOverviews | orderBy:'UpdatedOnVal':true" style="font-size: 85%">
-                <a ng-href="#/view/{{profile.Identifier}}">
-                  <table>
-                    <tr>
-                      <td style="width:45px" valign="top">
-                        <img src="http://placehold.it/45x45"/>
-                      </td>
-                      <td valign="top">
-                        <b>{{profile.Name}}</b>
-                        <p>
-                          {{profile.Level}} {{profile.Class}}
-                        </p>
-                      </td>
-                    </tr>
-                  </table>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+  <body ng-controller='HBSensorUIAppCtrl' ng-cloak class="ng-cloak">
+    <div class="row stick top" style="background-color: black;color: white">
+      <div class="one whole padded">
+        <a href="#/">
+          <h3 class="pull-left" style="color: white">HBSensorWeb</h3>
+        </a>
+        <span class="pull-right">&nbsp;&nbsp;</span>
+        <span class="pull-right" ng-show="!profileOverviews"><h5>Please wait...</h5></span>
+        <button class="asphalt dropdown button pull-right" ng-show="profileOverviews">
+          <i class="icon-chevron-down"></i>&nbsp;Profiles
+          <ul>
+            <li ng-repeat="profile in profileOverviews">
+              <a ng-href="#/view/{{profile.Identifier}}">{{profile.Name}}</a>
+            </li>
+          </ul>
+        </button>
       </div>
     </div>
-    <div style="padding-top: 40px" ng-view/>
+    <div style="padding-top:80px" ng-view/>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="angularjs/angular.min.js"></script>
-    <script src="underscorejs/underscore.js"></script>
+    <script type="text/javascript" src="vendor/groundwork/jquery.cycle2.js"></script>
+    <script type="text/javascript" src="vendor/groundwork/groundwork.all.js"></script>
+    <script src="vendor/angularjs/angular.min.js"></script>
+    <script src="vendor/underscorejs/underscore.js"></script>
+    <!-- <script src="vendor/chartjs/Chart.min.js"></script> -->
+    <script src="vendor/canvasjs/canvasjs.min.js"></script>
     <script src="app/HBSensorUIApp.js"></script>
   </body>
 </html>
